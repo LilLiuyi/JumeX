@@ -64,7 +64,6 @@ docker compose -f docker-compose.windows.yaml up --build
 - [x] Análisis de SBOM con IA funcional
 - [x] Comunicación entre microservicios asegurada
 - [ ] Despliegue en la nube
-- [ ] Sistema de login por interfaz
 
 ## Licencia
 
