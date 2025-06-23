@@ -27,7 +27,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 guard = Praetorian()
-CORS(app, resources={r"/chat": {"origins": ["http://localhost:5000", "http://127.0.0.1:5000", "http://flask_web:5000"]}}, supports_credentials=True)
+CORS(app, resources={r"/chat": {"origins": ["http://localhost:5000", "http://127.0.0.1:5000", "http://flask_web:5000", "http://localhost:5010", "http://127.0.0.1:5010", "http://flask_web:5010"]}}, supports_credentials=True)
 
 animal_service = AnimalFactsService()
 message_controller = MessageController(animal_service)
@@ -99,6 +99,7 @@ class Usuario(db.Model):
     
 guard.init_app(app, Usuario)
 api = Api(app)
+
 
 class Chat(Resource):
     @auth_required
