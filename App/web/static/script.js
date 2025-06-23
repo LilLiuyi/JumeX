@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
     formData.append("proyecto_id", proyectoActivo);
     formData.append("sbom", file);
 
-    fetch("http://127.0.0.1:5010/subir-sbom", {
+    fetch("http://localhost:5010/subir-sbom", {
       method: "POST",
       credentials: "include",
       body: formData
@@ -123,7 +123,7 @@ function cargarMensajes(proyectoId) {
   const chatBody = document.getElementById("chatBody");
   chatBody.innerHTML = ''; // Limpiar mensajes actuales
 
-  fetch(`http://127.0.0.1:5011/chat?proyecto_id=${proyectoId}`, {
+  fetch(`http://localhost:5011/chat?proyecto_id=${proyectoId}`, {
     method: 'GET',
     credentials: 'include'
   })
@@ -186,7 +186,7 @@ function sendMessage() {
   input.value = "";
 
   // petición a servidor
-  fetch('http://127.0.0.1:5011/chat', {
+  fetch(`http://localhost:5010/chat`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
