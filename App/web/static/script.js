@@ -186,7 +186,7 @@ function sendMessage() {
   input.value = "";
 
   // petición a servidor
-  fetch(`http://localhost:5010/chat`, {
+  fetch(`http://localhost:5011/chat`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
