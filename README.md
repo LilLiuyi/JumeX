@@ -24,7 +24,7 @@
 JumeX/
 ├── docker-compose.mac.yaml         # Versión para macOS con procesador M1/M2/M3
 ├── docker-compose.windows.yaml     # Versión para sistemas Windows (x86_64)
-└── proyecto_web/
+└── App/
     ├── api/       # Microservicio de gestión de datos y seguridad
     ├── chat/      # Microservicio de IA para análisis de SBOM
     └── web/       # Frontend Flask con la interfaz de usuario
@@ -57,6 +57,40 @@ docker compose -f docker-compose.windows.yaml up --build
 |--------------------|------------------------|
 | Interfaz Web       | http://localhost:5010  |
 | phpMyAdmin         | http://localhost:8080  |
+
+## Archivos SBOM de prueba
+
+En la ruta:
+
+App/web/uploads/
+
+
+se incluyen varios archivos JSON de ejemplo que representan **SBOMs de prueba**. Puedes utilizarlos para comprobar el funcionamiento de la plataforma sin necesidad de generar tus propios ficheros.
+
+> Estos ficheros están preparados para integrarse directamente en el flujo de análisis de la aplicación.
+
+## Credenciales de prueba
+
+Para facilitar la evaluación, se incluye un usuario administrador de prueba que se crea automáticamente al iniciar el sistema:
+
+- Correo electrónico: admin@example.es
+- Contraseña: admin
+
+Esta cuenta es segura ya que la aplicación se ejecuta en entorno local, sin exposición a internet por defecto.
+
+## Cómo detener y desmontar los contenedores
+
+**En macOS**
+
+```bash
+docker compose -f docker-compose.mac.yaml down --volumes --remove-orphans
+```
+
+**En Windows**
+
+```bash
+docker compose -f docker-compose.windows.yaml down --volumes --remove-orphans
+```
 
 ## Estado actual
 
